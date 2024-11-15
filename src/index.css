@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  background: black;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-black text-white min-h-screen;
+  overflow-x: hidden;
+}
+
+/* Enhanced smooth section transitions */
+.section-transition {
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Unified gradient overlays with improved transitions */
+.section-transition::before,
+.section-transition::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 35vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.section-transition::before {
+  top: 0;
+  background: linear-gradient(to bottom, 
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 15%,
+    rgba(0, 0, 0, 0.7) 30%,
+    transparent 100%
+  );
+}
+
+.section-transition::after {
+  bottom: 0;
+  background: linear-gradient(to top, 
+    rgb(0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.9) 15%,
+    rgba(0, 0, 0, 0.7) 30%,
+    transparent 100%
+  );
+}
+
+/* Enhanced section-specific gradients */
+.hero-gradient {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15), transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  transition: background 0.5s ease;
+}
+
+.about-gradient {
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  transition: background 0.5s ease;
+}
+
+.skills-gradient {
+  background: 
+    radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  transition: background 0.5s ease;
+}
+
+.projects-gradient {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  transition: background 0.5s ease;
+}
+
+.contact-gradient {
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(139, 92, 246, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  transition: background 0.5s ease;
+}
+
+/* Enhanced global overlay */
+.global-gradient {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, 
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 769px) {
+  body {
+    cursor: none !important;
+  }
+  
+  a, 
+  button,
+  [role="button"],
+  select,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Enhanced scroll animation */
+@keyframes scroll {
+  0% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(6px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.8; }
+}
+
+.animate-scroll {
+  animation: scroll 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Enhanced hover effects */
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Smooth section transitions */
+section {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus styles */
+:focus-visible {
+  outline: 2px solid rgba(139, 92, 246, 0.5);
+  outline-offset: 2px;
+}
