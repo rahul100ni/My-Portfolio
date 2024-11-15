@@ -20,23 +20,33 @@ const Projects = () => {
       }
     },
     {
-      title: "Project Two",
-      description: "An innovative solution demonstrating advanced JavaScript concepts and responsive design",
+      title: "Edumate",
+      description: "A comprehensive study companion featuring AI-powered learning tools and productivity features.",
       image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
-      tags: ["JavaScript", "HTML/CSS", "API Integration"],
+      features: [
+        { icon: Clock, text: "Pomodoro Timer" },
+        { icon: ListTodo, text: "Task Management" },
+        { icon: Bot, text: "AI Tools" }
+      ],
+      tags: ["React", "TypeScript", "Tailwind CSS"],
       links: {
-        live: "#",
-        github: "#"
+        live: "https://edumate-five.vercel.app",
+        github: "https://github.com/rahul100ni/Edumate"
       }
     },
     {
-      title: "Project Three",
-      description: "A cutting-edge application showcasing full-stack development capabilities",
+      title: "Edumate",
+      description: "A comprehensive study companion featuring AI-powered learning tools and productivity features.",
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Node.js", "MongoDB"],
+      features: [
+        { icon: Clock, text: "Pomodoro Timer" },
+        { icon: ListTodo, text: "Task Management" },
+        { icon: Bot, text: "AI Tools" }
+      ],
+      tags: ["React", "TypeScript", "Tailwind CSS"],
       links: {
-        live: "#",
-        github: "#"
+        live: "https://edumate-five.vercel.app",
+        github: "https://github.com/rahul100ni/Edumate"
       }
     }
   ];
